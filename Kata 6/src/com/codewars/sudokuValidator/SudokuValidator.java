@@ -5,6 +5,16 @@ import java.util.Map;
 
 public class SudokuValidator {
     public static boolean validate(int[][] sudoku) {
+        if (sudoku.length > 9) {
+            return false;
+        }
+        for (int i = 0; i < sudoku.length; i++) {
+            for (int j = 0; j < sudoku[i].length; j++) {
+                if (sudoku[i].length > 9) {
+                    return false;
+                }
+            }
+        }
         boolean isValid = true;
         //introduce local variables to split the sudoku into small arrays 3x3
         int c = 0;
